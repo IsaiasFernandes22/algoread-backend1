@@ -1,5 +1,5 @@
-public class GlobalExceptionHandlerMiddleware
-{
+public class GlobalExceptionHandlerMiddleware{
+    
     private readonly RequestDelegate _next;
 
     public GlobalExceptionHandlerMiddleware(RequestDelegate next)

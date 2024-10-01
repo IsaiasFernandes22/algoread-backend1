@@ -1,5 +1,5 @@
-public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
-{
+public void Configure(IApplicationBuilder app, IWebHostEnvironment env){
+    
     app.UseMiddleware<GlobalExceptionHandlerMiddleware>();  
 
     app.UseExceptionHandler("/Home/Error"); 
