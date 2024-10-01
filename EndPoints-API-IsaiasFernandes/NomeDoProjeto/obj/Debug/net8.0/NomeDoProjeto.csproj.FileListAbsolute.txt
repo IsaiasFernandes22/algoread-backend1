@@ -1,0 +1,7 @@
+C:\Users\GM3R2\OneDrive\Área de Trabalho\EndPoints-API-IsaiasFernandes\NomeDoProjeto\obj\Debug\net8.0\NomeDoProjeto.csproj.AssemblyReference.cache
+C:\Users\GM3R2\OneDrive\Área de Trabalho\EndPoints-API-IsaiasFernandes\NomeDoProjeto\obj\Debug\net8.0\NomeDoProjeto.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\GM3R2\OneDrive\Área de Trabalho\EndPoints-API-IsaiasFernandes\NomeDoProjeto\obj\Debug\net8.0\NomeDoProjeto.AssemblyInfoInputs.cache
+C:\Users\GM3R2\OneDrive\Área de Trabalho\EndPoints-API-IsaiasFernandes\NomeDoProjeto\obj\Debug\net8.0\NomeDoProjeto.AssemblyInfo.cs
+C:\Users\GM3R2\OneDrive\Área de Trabalho\EndPoints-API-IsaiasFernandes\NomeDoProjeto\obj\Debug\net8.0\NomeDoProjeto.csproj.CoreCompileInputs.cache
+C:\Users\GM3R2\OneDrive\Área de Trabalho\EndPoints-API-IsaiasFernandes\NomeDoProjeto\obj\Debug\net8.0\NomeDoProjeto.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\GM3R2\OneDrive\Área de Trabalho\EndPoints-API-IsaiasFernandes\NomeDoProjeto\obj\Debug\net8.0\NomeDoProjeto.MvcApplicationPartsAssemblyInfo.cache
