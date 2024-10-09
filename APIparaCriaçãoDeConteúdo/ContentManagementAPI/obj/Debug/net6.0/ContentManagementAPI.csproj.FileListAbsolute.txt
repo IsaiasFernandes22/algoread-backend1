@@ -1,0 +1,7 @@
+C:\algoread-backend1\APIparaCriaçãoDeConteúdo\ContentManagementAPI\obj\Debug\net6.0\ContentManagementAPI.csproj.AssemblyReference.cache
+C:\algoread-backend1\APIparaCriaçãoDeConteúdo\ContentManagementAPI\obj\Debug\net6.0\ContentManagementAPI.GeneratedMSBuildEditorConfig.editorconfig
+C:\algoread-backend1\APIparaCriaçãoDeConteúdo\ContentManagementAPI\obj\Debug\net6.0\ContentManagementAPI.AssemblyInfoInputs.cache
+C:\algoread-backend1\APIparaCriaçãoDeConteúdo\ContentManagementAPI\obj\Debug\net6.0\ContentManagementAPI.AssemblyInfo.cs
+C:\algoread-backend1\APIparaCriaçãoDeConteúdo\ContentManagementAPI\obj\Debug\net6.0\ContentManagementAPI.csproj.CoreCompileInputs.cache
+C:\algoread-backend1\APIparaCriaçãoDeConteúdo\ContentManagementAPI\obj\Debug\net6.0\ContentManagementAPI.MvcApplicationPartsAssemblyInfo.cache
+C:\algoread-backend1\APIparaCriaçãoDeConteúdo\ContentManagementAPI\obj\Debug\net6.0\ContentManagementAPI.sourcelink.json
