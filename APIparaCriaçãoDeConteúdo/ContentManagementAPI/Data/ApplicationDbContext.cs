@@ -1,8 +1,7 @@
-// C:\algoread-backend1\APIparaCriaçãoDeConteúdo\ContentManagementAPI\Data\ApplicationDbContext.cs
 using Microsoft.EntityFrameworkCore;
 using ContentManagementAPI.Models;
 
-namespace ContentManagementAPI.Data
+namespace ContentManagementAPI
 {
     public class ApplicationDbContext : DbContext
     {
@@ -13,5 +12,11 @@ namespace ContentManagementAPI.Data
 
         public DbSet<User> Users { get; set; }
         public DbSet<Content> Contents { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+            // Configurações adicionais do modelo, se necessário
+        }
     }
 }

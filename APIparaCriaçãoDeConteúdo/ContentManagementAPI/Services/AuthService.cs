@@ -1,12 +1,12 @@
-// C:\algoread-backend1\APIparaCriaçãoDeConteúdo\ContentManagementAPI\Services\AuthService.cs
+using System;
 using System.Threading.Tasks;
-using ContentManagementAPI.DTOs;
-using ContentManagementAPI.Repositories;
+using BCrypt.Net;
 using ContentManagementAPI.Models;
+using ContentManagementAPI.Repositories;
 
 namespace ContentManagementAPI.Services
 {
-    public class AuthService : IAuthService
+    public class AuthService
     {
         private readonly IUserRepository _userRepository;
 
@@ -15,36 +15,33 @@ namespace ContentManagementAPI.Services
             _userRepository = userRepository;
         }
 
-        public async Task<LoginResponseDto> LoginAsync(LoginDto loginDto)
+        public async Task<User> RegisterAsync(string email, string password)
         {
-            var user = await _userRepository.GetUserByUsername(loginDto.Username);
-            if (user == null || user.Password != loginDto.Password)
+            var existingUser = await _userRepository.GetByEmailAsync(email);
+            if (existingUser != null)
             {
-                return null;
+                throw new Exception("User already exists.");
             }
 
-            return new LoginResponseDto
+            var user = new User
             {
-                Username = user.Username,
-                Token = GenerateToken(user)
-            };
-        }
-
-        public async Task RegisterAsync(RegisterDto registerDto)
-        {
-            var newUser = new User
-            {
-                Username = registerDto.Username,
-                Password = registerDto.Password
+                Email = email,
+                Password = BCrypt.Net.BCrypt.HashPassword(password) // Certifique-se de que a biblioteca BCrypt está instalada.
             };
 
-            await _userRepository.AddUser(newUser);
+            await _userRepository.AddAsync(user);
+            return user;
         }
 
-        private string GenerateToken(User user)
+        public async Task<User> LoginAsync(string email, string password)
         {
-            // Lógica para gerar o token JWT
-            return "token";
+            var user = await _userRepository.GetByEmailAsync(email);
+            if (user == null || !BCrypt.Net.BCrypt.Verify(password, user.Password))
+            {
+                throw new Exception("Invalid email or password.");
+            }
+
+            return user;
         }
     }
 }

@@ -1,8 +1,6 @@
-// C:\algoread-backend1\APIparaCriaçãoDeConteúdo\ContentManagementAPI\Repositories\UserRepository.cs
 using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
 using ContentManagementAPI.Models;
-using ContentManagementAPI.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace ContentManagementAPI.Repositories
 {
@@ -15,14 +13,14 @@ namespace ContentManagementAPI.Repositories
             _context = context;
         }
 
-        public async Task<User> GetUserByUsername(string username)
+        public async Task<User> GetByEmailAsync(string email)
         {
-            return await _context.Users.FirstOrDefaultAsync(u => u.Username == username);
+            return await _context.Users.FirstOrDefaultAsync(u => u.Email == email);
         }
 
-        public async Task AddUser(User user)
+        public async Task AddAsync(User user)
         {
-            _context.Users.Add(user);
+            await _context.Users.AddAsync(user);
             await _context.SaveChangesAsync();
         }
     }
