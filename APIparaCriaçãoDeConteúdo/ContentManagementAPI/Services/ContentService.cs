@@ -1,7 +1,8 @@
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using ContentManagementAPI.Models;
-using ContentManagementAPI.Repositories; // Adicione esta linha
+using ContentManagementAPI.Repositories;
 
 namespace ContentManagementAPI.Services
 {
@@ -37,6 +38,19 @@ namespace ContentManagementAPI.Services
         public async Task DeleteContentAsync(int id)
         {
             await _contentRepository.DeleteAsync(id);
+        }
+
+        public async Task<Content> SaveDraftAsync(Content content)
+        {
+            content.IsDraft = true;
+            await _contentRepository.UpdateAsync(content);
+            return content;
+        }
+
+        public async Task AutoSaveContentAsync(Content content)
+        {
+            content.LastAutoSavedAt = DateTime.UtcNow;
+            await _contentRepository.UpdateAsync(content);
         }
     }
 }

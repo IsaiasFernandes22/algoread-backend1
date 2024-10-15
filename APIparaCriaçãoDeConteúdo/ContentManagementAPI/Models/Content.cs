@@ -17,6 +17,10 @@ namespace ContentManagementAPI.Models
         
         public DateTime UpdatedAt { get; set; }
 
+        public bool IsDraft { get; set; }
+
+        public DateTime LastAutoSavedAt { get; set; }
+
         public Content()
         {
             CreatedAt = DateTime.UtcNow;

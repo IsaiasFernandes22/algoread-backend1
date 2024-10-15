@@ -16,7 +16,6 @@ namespace ContentManagementAPI
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            // Configurações adicionais do modelo, se necessário
         }
     }
 }

@@ -1,8 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
-using ContentManagementAPI.Services; // Adicione esta linha
+using ContentManagementAPI.Services;
 using ContentManagementAPI.Models;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using System;
 
 namespace ContentManagementAPI.Controllers
 {
@@ -57,6 +58,21 @@ namespace ContentManagementAPI.Controllers
         public async Task<IActionResult> Delete(int id)
         {
             await _contentService.DeleteContentAsync(id);
+            return NoContent();
+        }
+
+        [HttpPost("draft")]
+        public async Task<ActionResult<Content>> SaveDraft(Content content)
+        {
+            content.IsDraft = true;
+            var savedDraft = await _contentService.SaveDraftAsync(content);
+            return Ok(savedDraft);
+        }
+
+        [HttpPut("autosave")]
+        public async Task<IActionResult> AutoSave(Content content)
+        {
+            await _contentService.AutoSaveContentAsync(content);
             return NoContent();
         }
     }

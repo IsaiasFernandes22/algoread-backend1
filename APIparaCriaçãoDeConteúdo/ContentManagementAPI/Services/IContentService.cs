@@ -1,6 +1,6 @@
+using ContentManagementAPI.Models;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using ContentManagementAPI.Models;
 
 namespace ContentManagementAPI.Services
 {
@@ -11,5 +11,7 @@ namespace ContentManagementAPI.Services
         Task<Content> CreateContentAsync(Content content);
         Task<Content> UpdateContentAsync(Content content);
         Task DeleteContentAsync(int id);
+        Task<Content> SaveDraftAsync(Content content);
+        Task AutoSaveContentAsync(Content content);
     }
 }
